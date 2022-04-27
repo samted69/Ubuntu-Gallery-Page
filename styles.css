@@ -1,0 +1,279 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+img {
+  max-width: 200px;
+}
+
+/* GLOBAL AND UTILITIES */
+.container {
+  /* border: 1px solid red; */
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 10px 24px 10px;
+  background-color: #fffaf0;
+  color: #a9a9a9;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ARTIST INFO STYLING - Header Flex, Image Styles, Name & Location */
+header {
+  margin-bottom: 64px;
+}
+#image {
+  border-radius: 16px;
+  display: block;
+  max-width: 156px;
+  margin-bottom: 16px;
+}
+.artist-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.name {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.location {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+/* STATS SECTION STYLING */
+
+.artist-stats {
+  display: flex;
+  justify-content: center;
+}
+.artist-stats a :hover {
+  transform: scale(1.1);
+}
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #e5e5e5;
+  border-radius: 12px;
+  text-align: center;
+  width: 100px;
+  height: 67px;
+}
+.num-stat {
+  font-size: 18px;
+  font-weight: 600;
+  color: #4e5150;
+}
+.stat-detail {
+  font-size: 14px;
+}
+.space {
+  margin: 0 24px;
+}
+
+/* GALLERY IMAGES SECTION STYLING */
+section {
+  /* border: 1px solid red; */
+  max-width: 960px;
+  margin: auto;
+  margin-bottom: 134px;
+}
+.gallery-images {
+  display: grid;
+  grid-template-areas:
+    "pic1 pic2 pic2"
+    "pic3 pic3 pic4"
+    "pic5 pic6 pic4";
+  gap: 15px;
+  justify-items: center;
+}
+.gallery-image-1 {
+  max-width: 299px;
+  max-height: 299px;
+  width: 100%;
+  border-radius: 12px;
+  grid-area: pic1;
+}
+.gallery-image-2 {
+  max-width: 629px;
+  max-height: 299px;
+  width: 100%;
+  border-radius: 12px;
+  grid-area: pic2;
+}
+.gallery-image-3 {
+  max-width: 627px;
+  max-height: 299px;
+  width: 100%;
+  border-radius: 12px;
+  grid-area: pic3;
+}
+
+.gallery-image-4 {
+  max-width: 297px;
+  max-height: 613px;
+  width: 100%;
+  border-radius: 12px;
+  grid-area: pic4;
+}
+.gallery-image-5 {
+  max-width: 299px;
+  max-height: 299px;
+  width: 100%;
+  border-radius: 12px;
+  grid-area: pic5;
+}
+.gallery-image-6 {
+  max-width: 299px;
+  max-height: 299px;
+  width: 100%;
+  border-radius: 12px;
+  grid-area: pic6;
+}
+
+/* FOOTER STYLING */
+footer {
+  text-align: center;
+}
+footer p {
+  font-weight: 500;
+  font-size: 14px;
+}
+footer a {
+  font-weight: 700;
+}
+
+@media screen and (max-width: 426px) {
+  header {
+    margin-bottom: 39px;
+  }
+  #image {
+    border-radius: 16px;
+    max-width: 101.76px;
+    margin-bottom: 11.24px;
+  }
+  .name {
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  .location {
+    font-size: 10px;
+    margin-bottom: 12px;
+  }
+  .stat-card {
+    width: 78px;
+    height: 52px;
+  }
+  .num-stat,
+  .stat-detail {
+    font-size: 12px;
+  }
+  section {
+    margin-bottom: 44px;
+  }
+}
+
+/* CUSTOM BUTTON STYLING */
+.button,
+.button::after {
+  border: 0;
+  line-height: 1;
+  position: relative;
+}
+
+.button::after {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+  content: "UBUNTU.DEV";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 3%,
+    #00e6f6 3%,
+    #00e6f6 5%,
+    #ff013c 5%
+  );
+  text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #00e6f6;
+  clip-path: var(--slice-0);
+}
+
+.button:hover::after {
+  animation: 1s glitch;
+  animation-timing-function: steps(2, end);
+}
+
+@keyframes glitch {
+  0% {
+    clip-path: var(--slice-1);
+    transform: translate(-20px, -10px);
+  }
+
+  10% {
+    clip-path: var(--slice-3);
+    transform: translate(10px, 10px);
+  }
+
+  20% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 10px);
+  }
+
+  30% {
+    clip-path: var(--slice-3);
+    transform: translate(0px, 5px);
+  }
+
+  40% {
+    clip-path: var(--slice-2);
+    transform: translate(-5px, 0px);
+  }
+
+  50% {
+    clip-path: var(--slice-3);
+    transform: translate(5px, 0px);
+  }
+
+  60% {
+    clip-path: var(--slice-4);
+    transform: translate(5px, 10px);
+  }
+
+  70% {
+    clip-path: var(--slice-2);
+    transform: translate(-10px, 10px);
+  }
+
+  80% {
+    clip-path: var(--slice-5);
+    transform: translate(20px, -10px);
+  }
+
+  90% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 0px);
+  }
+
+  100% {
+    clip-path: var(--slice-1);
+    transform: translate(0);
+  }
+}
